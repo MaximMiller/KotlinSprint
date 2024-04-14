@@ -10,35 +10,24 @@ fun main() {
  – Распечатать результат в консоль;
  – В консоли должно быть выведено дробное число с 2 знаками после запятой.
      */
-//
-//    fun ada(sum: Double, count: Double) {
-//        val avwe: Double = sum / count
-//        println(avwe)
-//    }
-//    ada(32.00, 5.5)
+    val scorePersonOne = 3
+    val scorePersonTwo = 4
+    val scorePersonThird = 3
+    val scorePersonFour = 5
 
-    /*
-    i это содержание ячейки
-    - Нужен номер индекса для порядка
-    - складывать i + i = sum
-       sum + i = sum 2
-       sum 2 + i = sum 3
-       sum 3 + i = sum 4
-     */
-    val ar = arrayOf(2, 4, 3, 6)
+    val amountPerson = 4
+    val averageScore = (scorePersonOne + scorePersonTwo + scorePersonThird + scorePersonFour) / amountPerson.toDouble()
+    println("Средний бал класса $averageScore")
 
-//    val countIndex = ar.size
-    for (i in ar) {
-
-        var sum = i + i
-
-        println(sum)
-
-    }
-
-
-
+    val allScoreClass = arrayOf(3, 4, 3, 5)
+    println("Средний бал класса ${calculatesTheAverageScore(allScoreClass)}")
 }
 
-
-
+fun calculatesTheAverageScore(array: Array<Int>): Double {
+    val amountScore = array.size
+    var sumScore = 0.0
+    for (score in array) {
+        sumScore += score
+    }
+    return sumScore / amountScore
+}
