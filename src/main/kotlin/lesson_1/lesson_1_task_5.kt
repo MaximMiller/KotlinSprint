@@ -19,6 +19,6 @@ fun main() {
 fun timeInSpace(second: Int): String {
     val hour = second / AMOUNT_SECOND_IN_HOUR
     val min = second / AMOUNT_SECOND_IN_MINUTE % AMOUNT_SECOND_IN_MINUTE
-    val sec = second / 1 % 60 //вычисляется остаток секунд
+    val sec = second % AMOUNT_SECOND_IN_MINUTE
     return String.format("%02d:%02d:%02d", hour, min, sec)
 }
