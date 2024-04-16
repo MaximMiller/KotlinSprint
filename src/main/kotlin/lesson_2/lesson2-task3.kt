@@ -15,18 +15,11 @@ fun main() {
     val minutesDeparture = 39
     val totalTravelTimeInMinutes = 457
 
-    println(timeTrainArrival(hourDeparture, minutesDeparture, totalTravelTimeInMinutes))
-}
-
-fun timeTrainArrival(hourDeparture: Int, minutesDeparture: Int, totalTravelTimeInMinutes: Int): String {
     val convertingHourInMin = hourDeparture * TOTAL_MINUTES_AN_HOUR
     val convertingMinInMin = convertingHourInMin + minutesDeparture
     val calculationTotalTravelTimeInMinutes = convertingMinInMin + totalTravelTimeInMinutes
     val comingMin = calculationTotalTravelTimeInMinutes % TOTAL_MINUTES_AN_HOUR
-    var comingHour = calculationTotalTravelTimeInMinutes / TOTAL_MINUTES_AN_HOUR
-    if (comingHour >= 24) {
-        comingHour -= 24
-    }
-    val result = "Поезд прибудет на станцию в $comingHour:$comingMin по МСК"
-    return result
+    val comingHour = calculationTotalTravelTimeInMinutes / TOTAL_MINUTES_AN_HOUR
+
+    println("Поезд прибудет на станцию в ${String.format("%02d:%02d", comingHour, comingMin)} по МСК")
 }
