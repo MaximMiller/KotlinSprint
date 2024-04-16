@@ -18,13 +18,14 @@ fun main() {
     val salaryOfInterns = 20000
 
     val expsForSalaryPermanentEmployees: Int = numberOfPermanentEmployees * salaryOfPermanentEmployees
-    println("Расходы на выплату зарплаты постоянных сотрудников $expsForSalaryPermanentEmployees рублей")
     val expsForSalaryInterns: Int = numberOfInterns * salaryOfInterns
-    println("Общие расходы по ЗП на стажеров $expsForSalaryInterns рублей")
     val totalExpsForSalary: Int = expsForSalaryInterns + expsForSalaryPermanentEmployees
-    println("Общие расходы по ЗП после прихода стажеров $totalExpsForSalary рублей")
     val totalAmountEmployees: Int = numberOfPermanentEmployees + numberOfInterns
-    println("Общее количество сотрудников $totalAmountEmployees человек")
     val averageSalaryEmployees: Int = totalExpsForSalary / totalAmountEmployees
+
+    println("Расходы на выплату зарплаты постоянных сотрудников $expsForSalaryPermanentEmployees рублей")
+    println("Общие расходы по ЗП на стажеров $expsForSalaryInterns рублей")
+    println("Общие расходы по ЗП после прихода стажеров $totalExpsForSalary рублей")
+    println("Общее количество сотрудников $totalAmountEmployees человек")
     println("Средняя ЗП одного сотрудника после устройства стажеров $averageSalaryEmployees рублей")
 }
