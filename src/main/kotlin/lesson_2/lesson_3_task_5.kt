@@ -1,5 +1,7 @@
 package org.example.lesson_2
 
+const val TOTAL_PERCENT = 100
+
 fun main() {/*
     Напиши программу-калькулятор для банковского приложения (такой функционал бывает на промо экранах).
     Используя формулу сложных процентов (ее можно загуглить), нужно посчитать размер вклада через 20 лет с такими условиями:
@@ -29,7 +31,7 @@ fun calculationTotalDepositAmountOverTime(sumDeposit: Int, interestRate: Double,
     var result = sumDeposit.toDouble()
     var i = 1
     while (i <= bestBefore) {
-        val interestProfit = result * interestRate / 100
+        val interestProfit = result * interestRate / TOTAL_PERCENT
         result += interestProfit
         i++
     }
