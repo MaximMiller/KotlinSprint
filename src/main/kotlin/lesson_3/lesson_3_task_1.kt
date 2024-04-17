@@ -10,8 +10,8 @@ fun main() {
     перезаписывая данные в одну исходную переменную.
      */
     val nameUser = "Максим"
-    val afternoonGreetings = "Добрый день "
-    val eveningGreetings = "Добрый вечер "
+    val afternoonGreetings = "Добрый день"
+    val eveningGreetings = "Добрый вечер"
 
     var defaultGreetings = afternoonGreetings
     println("$defaultGreetings $nameUser")
