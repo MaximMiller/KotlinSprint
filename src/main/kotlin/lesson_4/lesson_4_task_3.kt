@@ -1,5 +1,10 @@
 package org.example.lesson_4
 
+const val IS_SUNNY = true
+const val IS_AWNING_OPEN = true
+const val AIR_HUMIDITY = 20
+const val SEASON = "зима"
+
 fun main() {
     /*
         На территории агрокомплекса функционирует система автоматического мониторинга условий для
@@ -23,12 +28,12 @@ fun main() {
 
     И типами данных - boolean, boolean, int, String.
      */
-
-    val weatherToday = true
-    val awning = true
+    val weatherTodayIsSunny = true
+    val awningIsOpen = true
     val airHumidity = 20
-    val season = "зима"
-    val favorableConditions = weatherToday && awning && airHumidity == 20 && season != "зима"
+    val currentSeason = "зима"
+    val favorableConditions = IS_SUNNY == weatherTodayIsSunny && IS_AWNING_OPEN == awningIsOpen &&
+                              AIR_HUMIDITY == airHumidity && currentSeason != SEASON
 
     println("Благоприятные ли условия сейчас для роста бобовых? $favorableConditions")
 }
