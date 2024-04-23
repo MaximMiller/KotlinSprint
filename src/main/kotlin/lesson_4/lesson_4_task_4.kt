@@ -19,7 +19,8 @@ fun main() {
     - все сообщение должно печататься в одном println();
     - при изменении значения переменной дня тренировки на 1 день вперед, вывод должен меняться.
      */
-    val trainingProgramToday = 8 % 2
+    val trainingDay = 5
+    val trainingProgramToday = trainingDay % 2
 
     println(
         """
