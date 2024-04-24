@@ -24,7 +24,11 @@ fun main() {
 
     when {
         wonNumberOne in listEnteredNumbers && wonNumberTwo in listEnteredNumbers -> println("Поздравляем! Вы выиграли главный приз!")
-        wonNumberOne in listEnteredNumbers || wonNumberTwo in listEnteredNumbers -> println("Вы выиграли утешительный приз!")
+        wonNumberOne in listEnteredNumbers || wonNumberTwo in listEnteredNumbers -> {
+            println("Вы выиграли утешительный приз!")
+            println("\"Счастливые\" числа в лотереи: $wonNumberOne и $wonNumberTwo")
+        }
+
         else -> {
             println("Неудача!")
             println("\"Счастливые\" числа в лотереи: $wonNumberOne и $wonNumberTwo")
