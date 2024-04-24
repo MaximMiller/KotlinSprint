@@ -20,14 +20,14 @@ fun main() {
     - при изменении значения переменной дня тренировки на 1 день вперед, вывод должен меняться.
      */
     val trainingDay = 5
-    val trainingProgramToday = trainingDay % 2
+    val isEvan = trainingDay % 2 == 0
 
     println(
         """
-    Упражнения для рук:       ${trainingProgramToday != 0}
-    Упражнения для ног:       ${trainingProgramToday == 0}
-    Упражнения для спины:  ${trainingProgramToday == 0}
-    Упражнения для пресса: ${trainingProgramToday != 0}
-    """.trimIndent()
+        Упражнения для рук:       ${!isEvan}
+        Упражнения для ног:       $isEvan
+        Упражнения для спины:  $isEvan
+        Упражнения для пресса: ${!isEvan}
+        """.trimIndent(),
     )
 }
