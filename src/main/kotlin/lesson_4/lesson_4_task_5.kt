@@ -4,6 +4,7 @@ const val IS_GOOD_CONDITION_SHIP = true
 const val MIN_QUANTITY_TEAM = 55
 const val MAX_QUANTITY_TEAM = 70
 const val MIN_QUANTITY_BOXES_FOOD = 50
+
 fun main() {
     /*
 Научно-исследовательский корабль может приступить к долгосрочному плаванию при выполнении следующих условий:
@@ -38,16 +39,15 @@ fun main() {
     val isWeatherGood = readln().toBoolean()
 
     val recommendedState =
-        conditionShip != IS_GOOD_CONDITION_SHIP && quantityTeam >= MIN_QUANTITY_TEAM && quantityTeam <= MAX_QUANTITY_TEAM
-                && quantityBoxesFood > MIN_QUANTITY_BOXES_FOOD && isWeatherGood || !isWeatherGood
+        conditionShip != IS_GOOD_CONDITION_SHIP && quantityTeam >= MIN_QUANTITY_TEAM && quantityTeam <= MAX_QUANTITY_TEAM &&
+            quantityBoxesFood > MIN_QUANTITY_BOXES_FOOD && isWeatherGood || !isWeatherGood
 
     val validState =
         conditionShip && quantityTeam == MAX_QUANTITY_TEAM && isWeatherGood && quantityBoxesFood >= MIN_QUANTITY_BOXES_FOOD
 
-    if (recommendedState) {
-        println("Состояние готовности к плаванию Вашего Научно-исследовательский корабля = Рекомендованное")
-    } else if (validState) {
-        println("Состояние готовности к плаванию Вашего Научно-исследовательский корабля = Допустимое")
-    } else
-        println("Состояние готовности к плаванию Вашего Научно-исследовательский корабля = Запрет на плавание")
+    when {
+        recommendedState -> println("Состояние готовности к плаванию Вашего Научно-исследовательский корабля = Рекомендованное")
+        validState -> println("Состояние готовности к плаванию Вашего Научно-исследовательский корабля = Допустимое")
+        else -> println("Состояние готовности к плаванию Вашего Научно-исследовательский корабля = Запрет на плавание")
+    }
 }
