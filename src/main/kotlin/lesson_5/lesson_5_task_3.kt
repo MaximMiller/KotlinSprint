@@ -13,8 +13,8 @@ fun main() {
     - программа должна учитывать ввод чисел в обратном порядке.
      */
     val numbersLotteryRange = 0..42
-    val wonNumberOne = numbersLotteryRange.random()
-    val wonNumberTwo = numbersLotteryRange.random()
+    val wonNumberOne = 3
+    val wonNumberTwo = 21
 
     println("Лотерея! Введите первое число в диапазоне $numbersLotteryRange")
     val numFirst = readln().toInt()
