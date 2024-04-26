@@ -17,7 +17,7 @@ fun main() {
     var numberOfSeconds = readln().toInt()
 
     while (numberOfSeconds > 0) {
-        println("Осталось ${numberOfSeconds--} секунд")
+        println("Осталось секунд: ${numberOfSeconds--}")
         Thread.sleep(NUMBER_OF_MILLISECONDS_IN_SECOND)
     }
     println("Время вышло")
