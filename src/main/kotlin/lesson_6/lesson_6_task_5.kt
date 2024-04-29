@@ -1,7 +1,6 @@
 package org.example.lesson_6
 
-import kotlin.random.Random
-
+const val MAX_ATTEMPTS = 3
 fun main() {
     /*
     Доработка задачи на авторизацию. Нужно написать часть модуля для авторизации пользователя.
@@ -13,13 +12,12 @@ fun main() {
      заново. Для простоты ограничься примерами на сложение с использованием цифр от 1 до 9.
      Если три попытки оказались неудачными, вывести сообщение "Доступ запрещен".
      */
-
-    val maxAttempts = 3
     var attemps = 0
+    val numberInterval = 1..9
 
-    while (attemps < maxAttempts) {
-        val num1 = Random.nextInt(1, 10)
-        val num2 = Random.nextInt(1, 10)
+    while (attemps < MAX_ATTEMPTS) {
+        val num1 = numberInterval.random()
+        val num2 = numberInterval.random()
         val sum = num1 + num2
         println("Решите пример: $num1 + $num2")
         val answerUser = readln().toInt()
@@ -32,7 +30,7 @@ fun main() {
             println("Неверный ответ. По истечении отведенных попыток доступ будет запрещен!")
         }
     }
-    if (attemps == maxAttempts) {
+    if (attemps == MAX_ATTEMPTS) {
         println("Доступ запрещен")
     }
 }
