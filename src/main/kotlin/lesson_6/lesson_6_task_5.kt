@@ -24,13 +24,11 @@ fun main() {
 
         if (answerUser == sum) {
             println("Добро пожаловать!")
-            break
+            return
         } else {
             attemps++
             println("Неверный ответ. По истечении отведенных попыток доступ будет запрещен!")
         }
     }
-    if (attemps == MAX_ATTEMPTS) {
-        println("Доступ запрещен")
-    }
+    println("Доступ запрещен")
 }
