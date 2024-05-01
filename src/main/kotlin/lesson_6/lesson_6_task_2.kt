@@ -1,6 +1,6 @@
 package org.example.lesson_6
 
-const val NUMBER_OF_MILLISECONDS_IN_SECOND = 1_000
+const val NUMBER_OF_MILLISECONDS_IN_SECOND_ = 1_000
 
 fun main() {
     /*
@@ -12,6 +12,6 @@ fun main() {
         "Это простой таймер! Введите количество секунд:"
     )
     val numberOfSeconds = readln().toLong()
-    Thread.sleep(numberOfSeconds * NUMBER_OF_MILLISECONDS_IN_SECOND)
+    Thread.sleep(numberOfSeconds * NUMBER_OF_MILLISECONDS_IN_SECOND_)
     println("Прошло $numberOfSeconds секунд")
 }
