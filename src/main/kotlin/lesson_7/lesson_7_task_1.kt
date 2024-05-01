@@ -1,5 +1,6 @@
 package org.example.lesson_7
 
+
 fun main() {
     /*
     Создай программу, которая генерирует шестизначные пароли. Пусть пароль
@@ -7,18 +8,16 @@ fun main() {
     (без специальных символов). Например, k5p6m2. Выведи сгенерированный пароль в консоль.
      */
 
-    val rangeInt = 1..9
+    val rangeInt = 0..9
+    val numberOfCharacters = 1..3
     val rangeChar = 'a'..'z'
-    val listResult = mutableListOf<String>()
     var strResult = ""
 
-    for (i in 1..6) {
+    for (i in numberOfCharacters) {
         val numbersRandom = rangeInt.random().toString()
         val charRandom = rangeChar.random().toString()
-        listResult.add(numbersRandom)
-        listResult.add(charRandom)
-        strResult += listResult[i]
+        strResult += numbersRandom
+        strResult += charRandom
     }
     println(strResult)
-
 }
