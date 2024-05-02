@@ -16,7 +16,7 @@ fun main() {
     println("Какой ингредиент Вы хотите найти?")
     var chooseUser = readln()
     for (i in ingredientsSalad) {
-        if (ingredientsSalad.contains(chooseUser)) {
+        if (ingredientsSalad.indexOf(chooseUser) in 0..ingredientsSalad.size) {
             println("Ингредиент $chooseUser в рецепте есть")
             break
         } else {
