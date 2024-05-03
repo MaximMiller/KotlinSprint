@@ -14,14 +14,12 @@ fun main() {
      */
     val ingredientsSalad = arrayOf("помидор", "огурец", "перец", "соль", "сметана")
     println("Какой ингредиент Вы хотите найти?")
-    var chooseUser = readln()
+    val chooseUser = readln()
     for (i in ingredientsSalad) {
-        if (ingredientsSalad.indexOf(chooseUser) in 0..ingredientsSalad.size) {
+        if (i == chooseUser) {
             println("Ингредиент $chooseUser в рецепте есть")
-            break
-        } else {
-            println("Такого ингредиента в рецепте нет")
-            chooseUser = readln()
+            return
         }
     }
+    println("Такого ингредиента в рецепте нет")
 }
