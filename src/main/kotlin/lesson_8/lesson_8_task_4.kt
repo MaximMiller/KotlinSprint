@@ -18,9 +18,8 @@ fun main() {
     println("Список ингредиентов: ${ingredientsSalad.contentToString()}")
     println("Введите название инредиента, который хотите заменить")
     val chooseIngredient = readln()
-
-    if (chooseIngredient in ingredientsSalad) {
-        val index = ingredientsSalad.indexOf(chooseIngredient)
+    val index = ingredientsSalad.indexOf(chooseIngredient)
+    if (index >= 0) {
         println("Отлично! Введите название инредиента, который хотите добавить")
         val replaceIngredient = readln()
         ingredientsSalad[index] = replaceIngredient
