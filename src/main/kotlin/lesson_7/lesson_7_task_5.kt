@@ -1,6 +1,7 @@
 package org.example.lesson_7
 
 const val MIN_LENGTH_PASSWORD = 6
+const val NUM_OF_REQUIRED_CHAR = 3
 
 fun main() {/*
     Создай программу, которая генерирует более сложные пароли.
@@ -9,29 +10,21 @@ fun main() {/*
 – длина пароля должна задаваться пользователем;
 – минимальная длина пароля 6 символов.
      */
-    println("Генерируем сложный пароль - укажите длину:")
-    val lengthPassword = readln().toInt()
-
-    val listChar = ('0'..'9') + ('a'..'z') + ('A'..'Z')
     val intRange = '0'..'9'
     val charRange = 'a'..'z'
     val capitalLetters = 'A'..'Z'
-    var complexPasswords = ""
+    val allChar = intRange + charRange + capitalLetters
+    val listComplexPasswords = mutableListOf(intRange.random(), charRange.random(), capitalLetters.random())
+
+    println("Генерируем сложный пароль - укажите длину:")
+    var lengthPassword = readln().toInt()
 
     if (lengthPassword < MIN_LENGTH_PASSWORD) {
-        for (i in 1..MIN_LENGTH_PASSWORD) {
-            complexPasswords += intRange.random()
-            complexPasswords += charRange.random()
-            complexPasswords += capitalLetters.random()
-            complexPasswords += listChar.random()
-        }
-    } else {
-        for (i in 1..lengthPassword) {
-            complexPasswords += listChar.random()
-            complexPasswords += intRange.random()
-            complexPasswords += charRange.random()
-            complexPasswords += capitalLetters.random()
-        }
+        lengthPassword = MIN_LENGTH_PASSWORD
     }
-    println(complexPasswords)
+    for (i in NUM_OF_REQUIRED_CHAR until lengthPassword) {
+        listComplexPasswords.add(allChar.random())
+    }
+    listComplexPasswords.shuffle()
+    println(listComplexPasswords.toCharArray())
 }
