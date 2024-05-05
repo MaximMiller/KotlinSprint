@@ -12,19 +12,17 @@ fun main() {
     ввел “да” – запроси: "Какой ингредиент вы хотите добавить?";
     - добавь считанное значение в базовый список;
     - в конце выведи сообщение со списком всех элементов такого типа: "Теперь в рецепте есть
-    следующие ингредиенты: [список_ингредиентов]". вопрос
+    следующие ингредиенты: [список_ингредиентов]".
      */
     val basicIngredientsList = mutableListOf("Рис", "Нори", "Лосось")
     println("В рецепте есть базовые ингредиенты: $basicIngredientsList")
     println("Желаете добавить еще? ( да/нет)")
-    val questionAddIngredients = readln()
+    val questionAddIngredients: String = readln()
 
-    if (questionAddIngredients == "да") {
+    if (questionAddIngredients.contains("да", ignoreCase = true)) {
         println("Какой ингредиент вы хотите добавить?")
         val addIngredients = readln()
         basicIngredientsList.add(addIngredients)
-    } else {
-        return
+        println("Теперь в рецепте есть следующие ингредиенты: $basicIngredientsList")
     }
-    println("Теперь в рецепте есть следующие ингредиенты: $basicIngredientsList")
 }
