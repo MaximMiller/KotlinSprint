@@ -27,5 +27,8 @@ fun main() {
 
 fun rollTheDice(): Int {
     val rangeRandomNumbers = 1..MAX_RANDOM_NUMBER
-    return rangeRandomNumbers.random()
+    val diceOne = rangeRandomNumbers.random()
+    val diceTwo = rangeRandomNumbers.random()
+    val resultRollTheDice = diceOne + diceTwo
+    return resultRollTheDice
 }
