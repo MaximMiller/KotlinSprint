@@ -1,5 +1,6 @@
 package org.example.lesson_10
 
+const val MAX_RANDOM_NUMBER = 6
 fun main() {
     /*
     Напиши небольшую игру, в которой пользователь и компьютер по очереди бросают кости.
@@ -25,6 +26,6 @@ fun main() {
 }
 
 fun rollTheDice(): Int {
-    val rangeRandomNumbers = 1..6
+    val rangeRandomNumbers = 1..MAX_RANDOM_NUMBER
     return rangeRandomNumbers.random()
 }
