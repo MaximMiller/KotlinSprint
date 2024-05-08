@@ -24,6 +24,6 @@ fun checkValidationLengthData(argumentOne: String, argumentTwo: String) {
     if (countCharArgumentTwo < MIN_NUMBER_LENGTH || countCharArgumentOne < MIN_NUMBER_LENGTH) {
         println("Логин или пароль недостаточно длинные")
     } else {
-        println("Добро пожаровать!")
+        println("Добро пожаловать!")
     }
 }
