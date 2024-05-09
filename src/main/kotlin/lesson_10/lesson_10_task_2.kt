@@ -15,15 +15,16 @@ fun main() {
     val login = readln()
     println("Введите пароль:")
     val password = readln()
-    checkValidationLengthData(login, password)
+
+    if (!isValidLength(login) || !isValidLength(password)) {
+        println("Логин или пароль недостаточно длинные")
+    }
 }
 
-fun checkValidationLengthData(argumentOne: String, argumentTwo: String) {
-    val countCharArgumentOne = argumentOne.length
-    val countCharArgumentTwo = argumentTwo.length
-    if (countCharArgumentTwo < MIN_NUMBER_LENGTH || countCharArgumentOne < MIN_NUMBER_LENGTH) {
-        println("Логин или пароль недостаточно длинные")
+fun isValidLength(anyLines: String): Boolean {
+    if (anyLines.length > MIN_NUMBER_LENGTH) {
+        return true
     } else {
-        println("Добро пожаловать!")
+        return false
     }
 }
