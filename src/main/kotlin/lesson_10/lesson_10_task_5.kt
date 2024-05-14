@@ -19,16 +19,16 @@ fun main() {
     Переменные логин, пароль и корзина  проинициализированы заранее и неизменяемы.
      */
     val jsonWebToken = logIn(LOGIN, PASSWORD)
-    val shoppingCart = getShoppingCart(jsonWebToken)
+    val shoppingCart = jsonWebToken?.let { getShoppingCart(it) }
 
-    if (shoppingCart!=null) {
+    if (shoppingCart != null) {
         println("Ваша корзина: $shoppingCart")
     } else
-    println("Ошибка авторизации!")
+        println("Ошибка авторизации!")
 }
 
-fun getShoppingCart(jsonWebToken: String): List<String>? {
-    return if (jsonWebToken != null) SHOPPING_CART else null
+fun getShoppingCart(jsonWebToken: String): List<String> {
+    return  SHOPPING_CART
 }
 
 fun generateToken(): String {
@@ -44,6 +44,9 @@ fun generateToken(): String {
     return token.joinToString(separator = "")
 }
 
-fun logIn(login: String, password: String): String {
-    return generateToken()
+fun logIn(login: String, password: String): String? {
+    if (login == LOGIN || password == PASSWORD) {
+        return generateToken()
+    } else
+        return null
 }
