@@ -18,7 +18,7 @@ fun main() {
         println("У человека выпало $progressHuman")
         val progressComputer = valueDice()
         println("У компьютера выпало $progressComputer")
-        if (rollDice(progressHuman = progressHuman, progressComputer = progressComputer)) {
+        if (checkDice(progressHuman, progressComputer)) {
             countWinsHuman++
             println("Победил человек")
         } else {
@@ -35,7 +35,6 @@ fun valueDice(): Int {
     return intRange.random()
 }
 
-fun rollDice(progressHuman: Int, progressComputer: Int): Boolean {
-    progressHuman > progressComputer
-    return true
+fun checkDice(progressHuman: Int, progressComputer: Int): Boolean {
+    return if (progressHuman > progressComputer) true else false
 }
