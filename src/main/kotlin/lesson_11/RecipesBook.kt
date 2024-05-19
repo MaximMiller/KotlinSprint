@@ -1,20 +1,22 @@
 package org.example.lesson_11
 
-class CategoryRecipes(
+class CategoryRecipe(
     val name: String,
     val image: String,
     val description: String,
+    val listRecipes: List<Recipes>,
 )
 
-class Ingredients(
+class Ingredient(
     val name: String,
-    val amount: String
+    val amount: String,
 )
 
 class Recipes(
     val name: String,
-    private var countPortion: Int,
-    private var favorites: Boolean = false,
+    val countPortion: Int,
+    val favorites: Boolean = false,
+    val listIngredients: List<Ingredient>
 )
 
 
