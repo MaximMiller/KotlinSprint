@@ -16,8 +16,8 @@ class TrackingWeather(
 
     fun printData() {
         println(
-            "Дневная температура: $dayTimeTemperature градусов по Цельсию\nНочная температура: $nightTemperature градусов по Цельсию\n" +
-                    "Наличие осадков в течение суток: $badWeather"
+            "Дневная температура: $dayTimeTemperature градусов по Цельсию\nНочная температура: $nightTemperature " +
+                    "градусов по Цельсию\n" + "Наличие осадков в течение суток: $badWeather"
         )
     }
 }
