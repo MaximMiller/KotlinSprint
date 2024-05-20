@@ -3,7 +3,7 @@ package org.example.lesson_13
 class TelephoneDir(
     val userName: String,
     val phoneNumber: Long,
-    val company: String? = null,
+    val company: String?,
 ) {
     fun printData() {
         println("Имя: $userName, Номер: $phoneNumber, Компания:$company")
@@ -12,13 +12,13 @@ class TelephoneDir(
 
 fun main() {
     val listContact = listOf(
-        TelephoneDir("Max", 8953147569955),
+        TelephoneDir("Max", 8953147569955, null),
         TelephoneDir("Fill", 8953147569955, "VK"),
         TelephoneDir("Bob", 8953147569955, "Sber"),
-        TelephoneDir("Anna", 8953147569955),
-        TelephoneDir("Li", 8953147569955)
+        TelephoneDir("Anna", 8953147569955, null),
+        TelephoneDir("Li", 8953147569955, "null")
     )
-    for (i in listContact) i.printData()
+    for (i in listContact) println(i.company)
 
 }
 /*
