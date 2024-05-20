@@ -1,18 +1,15 @@
 package org.example.lesson_12
 
+const val KELVIN = 273
+
 class TrackingWeather(
     _dayTimeTemperature: Int,
     _nightTemperature: Int,
     _badWeather: Boolean,
 ) {
-    var dayTimeTemperature: Int = _dayTimeTemperature
-    var nightTemperature: Int = _nightTemperature
+    val dayTimeTemperature: Int = _dayTimeTemperature - KELVIN
+    val nightTemperature: Int = _nightTemperature - KELVIN
     val badWeather: Boolean = _badWeather
-
-    init {
-        dayTimeTemperature -= 273
-        nightTemperature -= 273
-    }
 
     fun printData() {
         println(
