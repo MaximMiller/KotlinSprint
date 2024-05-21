@@ -11,6 +11,7 @@ class TelephoneDir(
 }
 
 fun main() {
+    var listCompany = listOf<String>()
     val listContact = listOf(
         TelephoneDir("Max", 8953147569955, null),
         TelephoneDir("Fill", 8953147569955, "VK"),
@@ -18,7 +19,11 @@ fun main() {
         TelephoneDir("Anna", 8953147569955, null),
         TelephoneDir("Li", 8953147569955, "null")
     )
-    for (i in listContact) println(i.company)
+    for (i in listContact) {
+        listCompany = listContact.mapNotNull { it.company }
+    }
+    println(listCompany)
+
 
 }
 /*
