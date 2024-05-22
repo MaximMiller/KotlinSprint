@@ -19,12 +19,9 @@ fun main() {
         TelephoneDir("Anna", 8953147569955, null),
         TelephoneDir("Li", 8953147569955, "null")
     )
-    for (i in listContact) {
         listCompany = listContact.mapNotNull { it.company }
-    }
+
     println(listCompany)
-
-
 }
 /*
 Скопируй класс из предыдущей задачи и измени его название для избегания конфликтов.
