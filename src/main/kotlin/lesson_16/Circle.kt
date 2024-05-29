@@ -3,7 +3,7 @@ package org.example.lesson_16
 private const val PI = 3.14
 
 class Circle(
-    private val radius: Int,
+    private val radius: Double,
 ) {
     fun calculateLengthCircle(): Double {
         return 2 * PI * radius
@@ -15,7 +15,7 @@ class Circle(
 }
 
 fun main() {
-    val circle = Circle(15)
+    val circle = Circle(15.0)
     println("Длина окружности: ${circle.calculateLengthCircle()}")
     println("Площадь круга: ${circle.calculateSquare()}")
 
