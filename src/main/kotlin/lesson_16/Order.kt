@@ -13,11 +13,17 @@ class Order(
     fun callManager(changeStatus: String) {
         changeStatus(changeStatus)
     }
+
+    override fun toString(): String {
+        return "Статус заказа: $status"
+    }
 }
 
 fun main() {
     val order = Order(1, "В резерве")
+    println(order)
     order.callManager("Доставка")
+    println(order)
 
 }
 /*
