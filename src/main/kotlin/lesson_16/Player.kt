@@ -1,29 +1,38 @@
 package org.example.lesson_16
 
+import kotlin.math.absoluteValue
+
 class Player(
     private val nickName: String,
 ) {
+    private var isAlive = true
+
     private var health: Int = 100
     private var forceAttack: Int = 50
 
     private fun death() {
-        health = 0
-        forceAttack = 0
+        if (isAlive) {
+            forceAttack = 0
+            health = 0
+            isAlive = false
+            println("$nickName умер и больше не может быть исцелен или получать урон.")
+        }
     }
 
     fun getDamage(attack: Int) {
-        if (health <= 0) {
-            death()
-        } else {
-            health -= attack
+        if (isAlive) {
+            health -= attack.coerceAtMost(100)
+            if (health <= 0) {
+                death()
+            }
         }
     }
 
     fun treat(tablet: Int) {
-        if (health <= 0) {
-            death()
+        if (isAlive && tablet <= 100) {
+            health += tablet.coerceAtMost(99)
         } else {
-            health += tablet
+            println("Невозможно вылечить игрока на более чем 100%")
         }
     }
 
@@ -34,15 +43,12 @@ class Player(
 
 fun main() {
     val player = Player("IronMan")
-    player.getDamage(50)
-    player.treat(10)
-    player.getDamage(50)
+    player.getDamage(99)
     println(player)
-    player.getDamage(50)
+//    player.treat(10)
+//    println(player)
+    player.treat(101)
     println(player)
-    player.treat(20)
-    println(player)
-
 }
 /*
 Для игры требуется создать класс игрока. С полями: имя, здоровье и сила удара.
