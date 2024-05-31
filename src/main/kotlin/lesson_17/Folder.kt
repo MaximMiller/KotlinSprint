@@ -4,7 +4,6 @@ class Folder(
     private val isSecret: Boolean,
     private val name: String,
     private val amountFiles: Int,
-
     ) {
     val folderName: String
         get() = if (isSecret) "скрытая папка" else name
@@ -14,10 +13,10 @@ class Folder(
 }
 
 fun main() {
-    val folderMain = Folder(true,"Документы", 32)
+    val folderMain = Folder(true, "Документы", 32)
     println("Название: ${folderMain.folderName}\nКоличество файлов-${folderMain.folderAmountFiles}")
     println()
-    val folderUser = Folder(false,"Загружено", 2)
+    val folderUser = Folder(false, "Загружено", 2)
     println("Название: ${folderUser.folderName}\nКоличество файлов-${folderUser.folderAmountFiles}")
 
 
