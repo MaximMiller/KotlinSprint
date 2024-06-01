@@ -8,7 +8,6 @@ class User {
         }
 
     var password: String = ""
-        private set
         get() = "*".repeat(field.length)
 
     fun changePassword(newPassword: String) {
@@ -18,9 +17,11 @@ class User {
 
 fun main() {
     val user = User()
-    user.login = "das"
+    user.login = "ИванИванов"
+    user.password = "12345678"
     user.changePassword("dsad")
-    user.password
+    user.password="dasda"
+    println("Текущий пароль: ${user.password}")
 
 }
 /*
