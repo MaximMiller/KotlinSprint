@@ -1,12 +1,13 @@
 package org.example.lesson_16
 
-import kotlin.math.absoluteValue
+private const val MAX_VALUE_TABLET = 100
+private const val MAX_VALUE_ATTACK = 100
+private const val MAXIMUM_HEALTH_LEVEL = 100
 
 class Player(
     private val nickName: String,
 ) {
     private var isAlive = true
-
     private var health: Int = 100
     private var forceAttack: Int = 50
 
@@ -21,7 +22,7 @@ class Player(
 
     fun getDamage(attack: Int) {
         if (isAlive) {
-            health -= attack.coerceAtMost(100)
+            health -= attack.coerceAtMost(MAX_VALUE_ATTACK)
             if (health <= 0) {
                 death()
             }
@@ -29,8 +30,8 @@ class Player(
     }
 
     fun treat(tablet: Int) {
-        if (isAlive && tablet <= 100) {
-            health += tablet.coerceAtMost(99)
+        if (isAlive && tablet <= MAXIMUM_HEALTH_LEVEL) {
+            health += tablet.coerceAtMost(MAX_VALUE_TABLET)
         } else {
             println("Невозможно вылечить игрока на более чем 100%")
         }
