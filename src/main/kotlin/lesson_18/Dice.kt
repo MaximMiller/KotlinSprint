@@ -1,25 +1,26 @@
 package org.example.lesson_18
 
-abstract class Dice {
-    abstract val countFacet: Int
+open class Dice(
+    private val countFacet: Int,
+) {
     private var valueDice = 0
-    open fun throwDice(): Int {
+    fun throwDice(): Int {
         val oneDice = (1..countFacet).random()
         val twoDice = (1..countFacet).random()
         valueDice = oneDice + twoDice
         return valueDice
     }
 
-    open fun printValueDice() {
+    fun printValueDice() {
         println("Общее значение костей $valueDice")
     }
 }
 
-class DiceFourFacet(override val countFacet: Int) : Dice()
+class DiceFourFacet(countFacet: Int) : Dice(countFacet)
 
-class DiceSixFacet(override val countFacet: Int) : Dice()
+class DiceSixFacet(countFacet: Int) : Dice(countFacet)
 
-class DiceEightFacet(override val countFacet: Int) : Dice()
+class DiceEightFacet(countFacet: Int) : Dice(countFacet)
 
 
 fun main() {
