@@ -1,5 +1,9 @@
 package org.example.lesson_18
 
+private const val NUMBER_OF_CUBE_FACES = 6
+private const val NUMBER_OF_RECTANGULAR_PARALLELEPIPED_FACES = 2
+
+
 abstract class Box {
     abstract fun calculateAreaPackaging(): Double
 }
@@ -10,7 +14,8 @@ class RectangularBox(
     private val height: Double,
 ) : Box() {
     override fun calculateAreaPackaging(): Double {
-        return length + wight + height
+        return NUMBER_OF_RECTANGULAR_PARALLELEPIPED_FACES * (length * wight + length * height + wight * height)
+
     }
 }
 
@@ -18,7 +23,7 @@ class CubeBox(
     private val ribLength: Double,
 ) : Box() {
     override fun calculateAreaPackaging(): Double {
-        return 6 * (ribLength * ribLength)
+        return NUMBER_OF_CUBE_FACES * (ribLength * ribLength)
     }
 }
 
