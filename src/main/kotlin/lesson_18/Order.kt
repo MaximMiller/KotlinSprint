@@ -1,33 +1,26 @@
 package org.example.lesson_18
 
 class Order(
-    private var _orderId: Int,
+    private val orderId: Int,
 ) {
-    var goods = listOf<String>()
-    var oneGoods: String? = null
-    fun printMessage(orderId: Int, oneGoods: String?) {
-        if (orderId == _orderId) {
-            println("Заказан следующий товар: $oneGoods")
-        }
-
+    fun printMessage(goods: String?) {
+        println("Заказан следующий товар: $goods")
     }
 
-    fun printMessage(orderId: Int, goods: List<String>) {
-        if (orderId == _orderId) {
-            println("Заказаны следующие товары:")
-            goods.forEach { println(it) }
-        }
+    fun printMessage(listGoods: List<String>) {
+        println("Заказаны следующие товары: ${listGoods.joinToString(", ")}")
     }
 
 }
 
 fun main() {
     val goodsOne = Order(1)
-    goodsOne.oneGoods = null
     val goodsTwo = Order(2)
-    goodsTwo.goods = listOf("Мышь", "Коврик для мыши", "Монитор")
-    goodsOne.printMessage(1, goodsOne.oneGoods)
-    goodsTwo.printMessage(2, goodsTwo.goods)
+    val listGoods = listOf("Мышь", "Коврик для мыши", "Монитор")
+    goodsOne.printMessage(listGoods)
+    goodsTwo.printMessage(listGoods)
+    goodsOne.printMessage("Коврик для мыши")
+    goodsTwo.printMessage("Коврик для мыши")
 }
 /*
 CRM (система управления взаимоотношениями с клиентами) обрабатывает
