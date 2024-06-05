@@ -5,9 +5,8 @@ abstract class Animals(
 ) {
     abstract fun eat(): String
     abstract fun sleep(): String
-    fun printData() {
+    fun foodInfo() {
         println("$name-> ${eat()}")
-        println("$name-> ${sleep()}")
     }
 }
 
@@ -43,10 +42,10 @@ class Cat(name: String) : Animals(name) {
 
 fun main() {
     val fox = Fox("Рыжая")
-    val dog = Dog("Мурка")
-    val cat = Cat("Рекс")
+    val dog = Dog("Рекс")
+    val cat = Cat("Мурка")
     val listAnimals = listOf<Animals>(fox, dog, cat)
-    listAnimals.forEach { it.printData() }
+    listAnimals.forEach { it.foodInfo() }
 
 }
 /*
