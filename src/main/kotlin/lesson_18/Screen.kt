@@ -1,25 +1,24 @@
 package org.example.lesson_18
 
-open class Shape
+open class Shape(val x: Number, val y: Number)
 
-class Point(val x: Number, val y: Number) : Shape()
+class Point(x: Number, y: Number) : Shape(x, y)
 
-class Square(val x: Number, val y: Number, val sideLength: Number) : Shape()
+class Square(x: Number, y: Number, val sideLength: Number) : Shape(x, y)
 
-class Circle(val x: Number, val y: Number, val radius: Number) : Shape()
+class Circle(x: Number, y: Number, val radius: Number) : Shape(x, y)
 
 class Screen {
-    fun draw(shape: Shape) {
-        when (shape) {
-            is Point -> println("Рисуем точку с координатами (${shape.x}, ${shape.y})")
-            is Square -> println(
-                "Рисуем квадрат с верхним левым углом (${shape.x}, ${shape.y}) и стороной " +
-                        "${shape.sideLength}"
-            )
+    fun draw(point: Point) {
+        println("Рисуем точку с координатами (${point.x}, ${point.y})")
+    }
 
-            is Circle -> println("Рисуем круг с центром (${shape.x}, ${shape.y}) и радиусом ${shape.radius}")
-            else -> println("Неизвестная фигура")
-        }
+    fun draw(square: Square) {
+        println("Рисуем квадрат с верхним левым углом (${square.x}, ${square.y}) и стороной ${square.sideLength}")
+    }
+
+    fun draw(circle: Circle) {
+        println("Рисуем круг с центром (${circle.x}, ${circle.y}) и радиусом ${circle.radius}")
     }
 }
 
@@ -34,8 +33,7 @@ fun main() {
 
     val circle = Circle(5.5f, 5.5f, 2.5f)
     screen.draw(circle)
-}
-/*
+}/*
 В приложении есть экран. Мы можем рисовать в нем разные объекты,
 указывая координаты (x, y) и сам объект. Объектами выступают круг, квадрат и точка.
 Координаты могут быть как Int, так и Float.
