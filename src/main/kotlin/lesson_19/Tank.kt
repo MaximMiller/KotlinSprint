@@ -1,9 +1,7 @@
 package org.example.lesson_19
 
 enum class TypesOfBullets(val damage: Int) {
-    BLUE(5),
-    GREEN(10),
-    RED(20),
+    BLUE(5), GREEN(10), RED(20),
 }
 
 class Tank {
@@ -15,20 +13,22 @@ class Tank {
     }
 
     fun shoot() {
-        println("Выстрел! Нанесенный урон: ${loadedAmmo?.damage}")
+        if (loadedAmmo != null) println("Выстрел! Нанесенный урон: ${loadedAmmo?.damage}")
+        else println("Танк не заряжен")
+
     }
 }
 
 fun main() {
     val tank = Tank()
+    tank.shoot()
     tank.weapons(TypesOfBullets.BLUE)
     tank.shoot()
     tank.weapons(TypesOfBullets.GREEN)
     tank.shoot()
     tank.weapons(TypesOfBullets.RED)
     tank.shoot()
-}
-/*
+}/*
 В компьютерной игре танк может подбирать разные виды патронов.
 Патроны различаются силой удара. Синие – 5 единиц, зеленые – 10, красные – 20.
 
