@@ -5,24 +5,20 @@ enum class Gender(val genderName: String) {
     FEMALE("Женский")
 }
 
-// Класс для представления человека
 data class Person(val name: String, val gender: Gender)
 
 fun main() {
-    // Инструкция для пользователя
     println("Введите имя и пол (MALE, FEMALE) через пробел. Например: Алексей MALE")
 
     val people = mutableListOf<Person>()
 
-    // Цикл для ввода данных 5 человек
-    repeat(5) {
-        val input = readLine()!!.split(" ")
+    for (i in 1..5) {
+        val input = readln().split(" ")
         val name = input[0]
-        val gender = Gender.valueOf(input[1].toUpperCase())
+        val gender: Gender = Gender.valueOf(input[1].uppercase())
         people.add(Person(name, gender))
     }
 
-    // Вывод списка людей в консоль
     people.forEach { println("Имя: ${it.name}, Пол: ${it.gender.genderName}") }
 }
 /*
