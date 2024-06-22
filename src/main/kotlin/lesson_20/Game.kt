@@ -1,11 +1,11 @@
 package org.example.lesson_20
 
 
-class Player(
+class Players(
     val hasKey: Boolean,
 )
 
-val checkForKey: (Player) -> Unit = { player: Player ->
+val checkForKey: (Players) -> Unit = { player: Players ->
     if (player.hasKey) {
         println("Дверь открыта")
     } else {
@@ -14,8 +14,8 @@ val checkForKey: (Player) -> Unit = { player: Player ->
 }
 
 fun main() {
-    val playerOne = Player(false)
-    val playerTwo = Player(true)
+    val playerOne = Players(false)
+    val playerTwo = Players(true)
     checkForKey(playerOne)
     checkForKey(playerTwo)
 }
