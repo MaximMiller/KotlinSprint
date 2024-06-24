@@ -8,6 +8,7 @@ fun String.vowelCount(): Int {
 fun main() {
     val str = "hello"
     println(str.vowelCount())
+
 }
 /*
 Реализуй extension функцию для класса String, которая будет
