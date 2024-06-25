@@ -16,14 +16,11 @@ fun main() {
         LocalDateTime.of(2024, 6, 24, 21, 15),
         4.37
     )
-    val (name) = alphaCentauri
-    val (_, description) = alphaCentauri
-    val (_, _, eventDateTime) = alphaCentauri
-    val (_, _, _, distanceFromEarth) = alphaCentauri
-    println(name)
-    println(description)
-    println(eventDateTime)
-    println(distanceFromEarth)
+
+    println("Название: ${alphaCentauri.component1()}")
+    println("Описание: ${alphaCentauri.component2()}")
+    println("Дата и время события: ${alphaCentauri.component3()}")
+    println("Расстояние от Земли: ${alphaCentauri.component4()} световых лет")
 }
 /*
 В Путеводитель для путешествующих автостопом по Галактике добавляется информация о
